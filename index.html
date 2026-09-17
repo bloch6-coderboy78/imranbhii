@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BALOCH AI — Video Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">BA</div>
+        <div><b>BALOCH AI</b><span>VIDEO STUDIO</span></div>
+      </div>
+      <button class="new-btn">＋ New project</button>
+      <nav>
+        <a class="active">▦ <span>All Media</span></a>
+        <a>♙ <span>Characters</span></a>
+        <a>▣ <span>Scenes</span></a>
+        <a>✦ <span>Tools</span></a>
+        <a>▶ <span>Generated Videos</span></a>
+      </nav>
+      <div class="side-bottom">
+        <a>♲ <span>Bin</span></a>
+        <a>◧ <span>Collapse</span></a>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="session">BALOCH AI <span>›</span> Untitled session</div>
+        <div class="top-actions">
+          <span class="credits">Credits: <b id="credits">120</b></span>
+          <button>?</button><button>⚙</button><button class="avatar">B</button>
+        </div>
+      </header>
+
+      <section class="canvas">
+        <div class="notice">⚠ You're running low on Flow credits. <button>Add credits</button></div>
+        <div class="empty-state">
+          <div class="flower">✤</div>
+          <h1>Create your next video</h1>
+          <p>Turn an idea, image, or scene into a cinematic AI video.</p>
+          <div class="drop">Drop media here or start with a prompt</div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="right-panel">
+      <div class="panel-head"><b>Video generation</b><span>×</span></div>
+      <label>Prompt</label>
+      <textarea id="prompt" placeholder="Describe the video you want to create..."></textarea>
+
+      <label>AI Provider</label>
+      <select id="provider">
+        <option>Google / Veo (API)</option>
+        <option>OpenAI-compatible video API</option>
+        <option>Runway (API)</option>
+        <option>Custom provider</option>
+      </select>
+
+      <label>Model</label>
+      <select id="model">
+        <option>Veo — Fast</option>
+        <option>Veo — Quality</option>
+      </select>
+
+      <label>Aspect ratio</label>
+      <div class="choices">
+        <button class="selected">16:9</button><button>9:16</button>
+      </div>
+
+      <label>Generation count</label>
+      <div class="choices">
+        <button class="selected">x1</button><button>x2</button><button>x3</button><button>x4</button>
+      </div>
+
+      <label>Quality</label>
+      <select>
+        <option>Standard</option>
+        <option>High</option>
+        <option>Ultra</option>
+      </select>
+
+      <div class="cost">Estimated cost <b>10 credits</b></div>
+      <button class="generate" id="generate">Generate video</button>
+      <div id="status" class="status"></div>
+
+      <hr>
+      <button class="admin-link" id="adminOpen">Admin panel</button>
+    </aside>
+  </div>
+
+  <div class="modal" id="adminModal">
+    <div class="admin">
+      <div class="admin-head"><h2>BALOCH AI Admin</h2><button id="adminClose">×</button></div>
+      <div class="admin-grid">
+        <div class="card"><span>Users pending</span><b>7</b></div>
+        <div class="card"><span>Active users</span><b>42</b></div>
+        <div class="card"><span>Credits used</span><b>1,840</b></div>
+      </div>
+      <h3>Provider routing</h3>
+      <p class="muted">Choose which authorized API provider handles new generation requests.</p>
+      <div class="provider-row"><b>Google / Veo</b><label><input type="checkbox" checked> Active</label></div>
+      <div class="provider-row"><b>Runway</b><label><input type="checkbox"> Active</label></div>
+      <div class="provider-row"><b>Custom provider</b><label><input type="checkbox"> Active</label></div>
+      <h3>User approvals</h3>
+      <div class="user-row"><span>user@example.com</span><button>Approve</button><button class="deny">Reject</button></div>
+      <div class="user-row"><span>creator@example.com</span><button>Approve</button><button class="deny">Reject</button></div>
+      <p class="security">Credentials belong on the server and should use official API/OAuth integrations. Never expose provider passwords or keys to users or browser code.</p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
