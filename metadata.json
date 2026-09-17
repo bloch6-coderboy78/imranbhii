@@ -1,0 +1,6 @@
+{
+  "name": "BALOCH AI — Video Studio",
+  "description": "AI video generation studio front-end prototype featuring prompt workspace, provider/model selector, aspect ratio controls, credits demo, and admin panel mockup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
